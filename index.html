@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アイムフリー｜就労継続支援B型事業所</title>
+  <meta name="description" content="アイムフリーは、身体・精神・発達・知的障がいなどで就労にお困りの方へ、自分らしく働くための一歩をサポートする就労継続支援B型事業所です。">
+  <style>
+    :root{
+      --green:#087534;
+      --deep:#2b1b12;
+      --text:#222;
+      --border:#b8d6c2;
+      --cream:#fbfaf4;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.75;
+    }
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    .container{max-width:1180px;margin:0 auto;padding:0 24px}
+
+    header{
+      height:126px;
+      background:#fff;
+      border-bottom:1px solid #e8e8e8;
+      display:flex;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:20;
+    }
+    .header-inner{
+      width:100%;
+      display:grid;
+      grid-template-columns:300px 1fr 300px;
+      align-items:center;
+      gap:24px;
+      padding:0 28px;
+    }
+    .logo-wrap{display:flex;align-items:center;gap:12px}
+    .logo-mark{
+      width:54px;height:54px;border-radius:50%;
+      background:radial-gradient(circle at 35% 35%,#78c94c,#0b7836);
+      position:relative;flex:0 0 auto;
+    }
+    .logo-mark::after{
+      content:"☘";position:absolute;left:5px;top:-4px;color:#fff;font-size:45px;
+    }
+    .logo-sub{font-size:14px;color:var(--green);font-weight:800;line-height:1.1}
+    .logo-main{font-size:35px;font-weight:900;color:var(--deep);letter-spacing:.04em;line-height:1.15}
+    .logo-no{display:inline-block;border:1px solid var(--green);color:var(--green);font-size:12px;padding:0 18px;line-height:1.5}
+    nav{display:flex;justify-content:center;gap:28px;font-weight:800;font-size:15px;white-space:nowrap}
+    nav a:first-child{color:var(--green);border-bottom:2px solid var(--green)}
+    .tel{text-align:right;font-weight:800}
+    .tel-note{font-size:14px}
+    .tel-main{font-size:34px;color:var(--green);line-height:1.15}
+    .tel-time{font-size:14px}
+
+    .hero{
+      height:500px;
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 78% 50%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 25%, rgba(255,255,255,.30) 48%, rgba(255,255,255,.9) 76%),
+        linear-gradient(90deg,#ffffff 0%,#eef9ff 42%,#cfefff 100%);
+      display:flex;
+      align-items:center;
+      isolation:isolate;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.75) 36%,rgba(255,255,255,.12) 64%,rgba(255,255,255,.03) 100%);
+      z-index:1;
+      pointer-events:none;
+    }
+    .hero-leaves{
+      position:absolute;
+      left:0;
+      top:0;
+      width:360px;
+      height:430px;
+      object-fit:cover;
+      opacity:.55;
+      z-index:0;
+      -webkit-mask-image:linear-gradient(to right, black 0%, black 50%, transparent 100%);
+      mask-image:linear-gradient(to right, black 0%, black 50%, transparent 100%);
+    }
+    .hero-woman-area{
+      position:absolute;
+      right:0;
+      bottom:0;
+      width:720px;
+      height:500px;
+      object-fit:cover;
+      object-position:center bottom;
+      z-index:0;
+      -webkit-mask-image:linear-gradient(to right, transparent 0%, black 18%, black 100%);
+      mask-image:linear-gradient(to right, transparent 0%, black 18%, black 100%);
+    }
+    .hero-inner{
+      width:min(1180px,100%);
+      margin:0 auto;
+      padding:0 24px;
+      position:relative;
+      z-index:2;
+    }
+    .hero-label{
+      display:block;
+      width:max-content;
+      margin:0 0 24px 165px;
+      background:linear-gradient(180deg,#0d8439,#07692d);
+      color:#fff;
+      padding:10px 34px;
+      border-radius:10px;
+      font-size:23px;
+      font-weight:900;
+      line-height:1.35;
+      letter-spacing:.03em;
+      text-align:center;
+      box-shadow:0 8px 18px rgba(0,0,0,.16);
+    }
+    .hero h1{
+      font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+      color:var(--green);
+      font-size:70px;
+      line-height:1.18;
+      letter-spacing:.08em;
+      margin:0;
+      font-weight:700;
+      text-shadow:0 2px 8px rgba(255,255,255,.98);
+    }
+    .hero h1 span{
+      display:block;
+      color:var(--deep);
+    }
+    .hero-copy{
+      font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+      font-size:22px;
+      font-weight:800;
+      color:var(--deep);
+      margin-top:8px;
+      text-shadow:0 2px 8px rgba(255,255,255,.98);
+    }
+
+    .intro{padding:52px 0 42px}
+    .intro-grid{
+      display:grid;
+      grid-template-columns:1fr 560px;
+      gap:44px;
+      align-items:center;
+    }
+    h2{
+      font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+      font-size:32px;
+      line-height:1.5;
+      margin:0 0 12px;
+      color:var(--deep);
+      letter-spacing:.04em;
+    }
+    h2 strong{color:var(--green)}
+    .lead p{font-size:15.5px;font-weight:800;margin:6px 0}
+    .thumb-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .thumb{
+      aspect-ratio:4/3;
+      border-radius:8px;
+      overflow:hidden;
+      box-shadow:0 8px 18px rgba(0,0,0,.1);
+      background:#f6f6f6;
+    }
+    .thumb img{width:100%;height:100%;object-fit:cover}
+
+    .support{padding:0 0 36px}
+    .section-title{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      justify-content:center;
+      color:var(--green);
+      font-size:28px;
+      font-weight:900;
+      margin:0 0 20px;
+    }
+    .section-title::before,.section-title::after{
+      content:"";height:1px;background:var(--green);opacity:.7;flex:1;
+    }
+    .support-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .support-card{
+      border:1px solid var(--border);
+      border-radius:8px;
+      padding:22px 20px;
+      min-height:150px;
+      background:#fff;
+    }
+    .icon{font-size:38px;color:var(--green);line-height:1}
+    .support-card h3{font-size:21px;color:var(--green);margin:8px 0}
+    .support-card p{font-size:15px;font-weight:800;margin:0}
+
+    .work{background:var(--cream);padding:32px 0 38px}
+    .work-grid{
+      display:grid;
+      grid-template-columns:230px 1fr 220px;
+      gap:28px;
+      align-items:center;
+    }
+    .work-label{
+      display:inline-block;
+      background:var(--green);
+      color:#fff;
+      padding:3px 18px;
+      border-radius:4px;
+      font-weight:900;
+      margin-bottom:8px;
+    }
+    ul{list-style:none;padding:0;margin:0;font-weight:800;font-size:15px}
+    li{margin:5px 0}
+    li::before{content:"●";color:var(--green);margin-right:8px}
+    .work-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .cta-box{
+      border:1px solid var(--border);
+      border-radius:8px;
+      background:#fff;
+      text-align:center;
+      padding:27px 10px;
+      color:var(--green);
+      font-size:25px;
+      font-weight:900;
+      line-height:1.45;
+    }
+    .cta-box small{display:block;font-size:15px;margin-top:8px}
+
+    .contact{
+      background:var(--green);
+      color:#fff;
+      text-align:center;
+      padding:46px 20px;
+    }
+    .contact h2{color:#fff;font-family:inherit;font-size:30px;margin:0 0 8px}
+    .contact p{margin:0 0 20px;font-weight:800}
+    .btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+    .btn{
+      background:#fff;color:var(--green);
+      border-radius:999px;
+      padding:12px 30px;
+      min-width:220px;
+      font-weight:900;
+      box-shadow:0 8px 18px rgba(0,0,0,.14);
+    }
+    footer{text-align:center;padding:20px;color:#555;font-size:13px}
+
+    @media(max-width:1200px){
+      .hero-woman-area{width:650px}
+      .hero-label{margin-left:120px}
+    }
+    @media(max-width:1050px){
+      header{height:auto}
+      .header-inner{grid-template-columns:1fr auto;padding:14px 18px}
+      nav{display:none}
+      .tel-main{font-size:24px}
+      .intro-grid,.work-grid{grid-template-columns:1fr}
+      .support-grid{grid-template-columns:repeat(2,1fr)}
+      .hero-label{margin-left:40px}
+      .hero h1{font-size:56px}
+      .hero-woman-area{right:-90px;width:600px}
+    }
+    @media(max-width:760px){
+      .hero{
+        height:520px;
+        align-items:flex-start;
+        padding-top:28px;
+      }
+      .hero::after{
+        background:linear-gradient(180deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.76) 50%,rgba(255,255,255,.18) 100%);
+      }
+      .hero-woman-area{
+        right:-180px;
+        width:640px;
+        height:520px;
+        opacity:.9;
+      }
+      .hero-leaves{width:280px;height:340px}
+      .hero-label{font-size:17px;padding:9px 18px;margin:0 0 20px 0}
+      .hero h1{font-size:42px}
+      .hero-copy{font-size:16px}
+    }
+    @media(max-width:640px){
+      .container{padding:0 16px}
+      .tel{display:none}
+      .header-inner{grid-template-columns:1fr}
+      .logo-main{font-size:28px}
+      .intro{padding-top:28px}
+      h2{font-size:24px}
+      .thumb-row,.work-photos{grid-template-columns:repeat(2,1fr)}
+      .support-grid{grid-template-columns:1fr}
+      .section-title{font-size:22px;gap:10px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="logo-wrap" href="#">
+        <div class="logo-mark"></div>
+        <div>
+          <div class="logo-sub">就労継続支援B型事業所</div>
+          <div class="logo-main">アイムフリー</div>
+          <div class="logo-no">指定番号 2813008105</div>
+        </div>
+      </a>
+      <nav>
+        <a href="#">ホーム</a>
+        <a href="#about">アイムフリーについて</a>
+        <a href="#service">サービス内容</a>
+        <a href="#work">作業紹介</a>
+        <a href="#facility">施設紹介</a>
+        <a href="#faq">よくあるご質問</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+      <div class="tel">
+        <div class="tel-note">まずはお気軽にお問い合わせください。</div>
+        <div class="tel-main">☎ 06-6415-8990</div>
+        <div class="tel-time">受付時間　9:00〜17:00（土日祝除く）</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="hero-leaves" src="images/hero-leaves.jpg" alt="">
+      <img class="hero-woman-area" src="images/hero-woman-area.jpg" alt="青空を見上げる女性の横顔">
+      <div class="hero-inner">
+        <div class="hero-label">
+          身体・精神・発達・知的障がいなどで<br>
+          就労にお困りの方へ
+        </div>
+        <h1><span>あなたは、</span>あなたであればいい</h1>
+        <div class="hero-copy">〜自分らしく、いきいきと働くための一歩を、私たちと一緒に〜</div>
+      </div>
+    </section>
+
+    <section class="intro" id="about">
+      <div class="container intro-grid">
+        <div class="lead">
+          <h2><strong>アイムフリー</strong>で あなたらしい「なりたい姿へ」</h2>
+          <p>アイムフリーは、利用者様一人ひとりの個性や状態に寄り添い、無理なく働ける環境と、</p>
+          <p>安心できるサポートを提供します。</p>
+          <p>「できることから始めたい」「自分のペースで成長したい」そんなあなたの想いを大切にします。</p>
+        </div>
+        <div class="thumb-row">
+          <div class="thumb"><img src="images/plant.jpg" alt="観葉植物"></div>
+          <div class="thumb"><img src="images/box.jpg" alt="梱包作業"></div>
+          <div class="thumb"><img src="images/clothes.jpg" alt="衣類作業"></div>
+          <div class="thumb"><img src="images/laptop.jpg" alt="パソコン作業"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="support" id="service">
+      <div class="container">
+        <div class="section-title">アイムフリーのサポート</div>
+        <div class="support-grid">
+          <div class="support-card"><div class="icon">👥</div><h3>個別サポート</h3><p>一人ひとりの状態や目標に合わせた支援計画で、あなたらしいペースで取り組めます。</p></div>
+          <div class="support-card"><div class="icon">💚</div><h3>安心の環境</h3><p>明るく落ち着ける施設で、スタッフが丁寧にサポート。安心して働ける環境です。</p></div>
+          <div class="support-card"><div class="icon">📈</div><h3>スキルアップ支援</h3><p>作業を通じてスキルを磨き、自信ややりがいを見つけられます。</p></div>
+          <div class="support-card"><div class="icon">🤝</div><h3>地域とつながる</h3><p>地域密着で、社会とのつながりを大切にし、自立を応援します。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="container work-grid">
+        <div>
+          <div class="work-label">主な作業内容</div>
+          <ul>
+            <li>軽作業・袋詰め・シール貼り</li>
+            <li>クリーニング作業・検品</li>
+            <li>パソコン作業・データ入力</li>
+            <li>ハンドメイド・創作活動 など</li>
+          </ul>
+        </div>
+        <div class="work-photos">
+          <div class="thumb"><img src="images/envelopes.jpg" alt="封筒作業"></div>
+          <div class="thumb"><img src="images/cleaning.jpg" alt="クリーニング作業"></div>
+          <div class="thumb"><img src="images/pc-work.jpg" alt="パソコン作業"></div>
+          <div class="thumb"><img src="images/handmade.jpg" alt="ハンドメイド"></div>
+        </div>
+        <div class="cta-box">見学・体験<br>随時受付中！🍃<small>お気軽にご相談ください</small></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>まずはお気軽にご相談ください</h2>
+      <p>見学・体験・ご利用について、スタッフが丁寧にご案内いたします。</p>
+      <div class="btns">
+        <a class="btn" href="tel:0664158990">電話で相談する</a>
+        <a class="btn" href="#">お問い合わせフォーム</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© アイムフリー All Rights Reserved.</footer>
+</body>
+</html>
